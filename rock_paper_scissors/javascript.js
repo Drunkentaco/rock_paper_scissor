@@ -1,13 +1,24 @@
-/* Computer choice
-    write a function "getComputerChoice"
-        compute: math.random will get me numbers 0 to less than 1
-        IF n=0-0.33 Then 
-            n=Rock, 
-        ELSE IF n=0.34-0.66 THEN
-            n=Paper
-        ELSE n=0.67-0.99 THEN
-            n=Scissor
+function getComputerChoice() {
+    let x = Math.random()
+    if (x < 0.33) {
+       return x = "Rock";
+    } else if (x >= 0.33 && x < 0.66) {
+       return x = "Paper";
+    } else
+        return x = "Scissor";
+}
 
+function getHumanChoice(){
+    let choice = prompt("Let's play a game! Choose rock, paper, or scissor!");
+    if (choice[0].toUpperCase + choice.slice(1).toLowerCase === "Rock"){
+        return choice = "Rock";
+    } else if (choice[0].toUpperCase + choice.slice(1).toLowerCase === "Paper"){
+        return choice = "Paper";
+    } else if (choice[0].toUpperCase + choice.slice(1).toLowerCase === "Scissor"){
+        return choice = "Scissor"
+    } else return console.log("Spelling error, try not adding 's' at the end of the word!")
+}
+/*
 Human Choice
     write a function "getHumanChoice"
         input "choice" [use prompt("Let's play Rock, Paper, or Scissor")]
@@ -30,3 +41,4 @@ playGame
     Write a function "playGame"
     Move your playRound function and score variables so that they’re declared inside of the new playGame function
     Play 5 rounds by calling playRound 5 times.
+    */
