@@ -9,21 +9,19 @@ function getComputerChoice() {
 }
 
 function getHumanChoice(){
-    let choice = prompt("Let's play a game! Choose rock, paper, or scissor!");
-    if (choice[0].toUpperCase + choice.slice(1).toLowerCase === "Rock"){
-        return choice = "Rock";
-    } else if (choice[0].toUpperCase + choice.slice(1).toLowerCase === "Paper"){
-        return choice = "Paper";
-    } else if (choice[0].toUpperCase + choice.slice(1).toLowerCase === "Scissor"){
-        return choice = "Scissor"
-    } else return console.log("Spelling error, try not adding 's' at the end of the word!")
+    let choice = prompt("Let's play a game! Choose rock, paper or scissor!");
+    let y = choice.toLowerCase();
+    if (y === "rock"){
+        return y = "rock";
+    } else if (y === "paper"){
+        return y = "paper";
+    } else if (y === "scissor"){
+        return y = "scissor";
+    } else return console.log("Spelling error! Please try spelling without 's' at the end of the word. I'm only a dumb computer ˙◠˙")
 }
+console.log(getHumanChoice())
 /*
-Human Choice
-    write a function "getHumanChoice"
-        input "choice" [use prompt("Let's play Rock, Paper, or Scissor")]
-        Make humanChoice case-insensitives
-        IF NOT spelling correct, "spelling erorr, please try again!"
+ 
 
 
 Player's Score
