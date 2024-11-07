@@ -9,24 +9,46 @@ function getComputerChoice() {
 }
 
 function getHumanChoice(){
-    let choice = prompt("Let's play a game! Choose rock, paper or scissor!");
-    let y = choice.toLowerCase();
-    if (y === "rock"){
-        return y = "rock";
-    } else if (y === "paper"){
-        return y = "paper";
-    } else if (y === "scissor"){
-        return y = "scissor";
-    } else return console.log("Spelling error! Please try spelling without 's' at the end of the word. I'm only a dumb computer ˙◠˙")
+    return prompt("Let's play a game! Choose rock, paper or scissor!");
 }
-console.log(getHumanChoice())
+
+let humanScore = 0
+let computerScore = 0
+
+
+
+function playRound(humanChoice, computerChoice){
+    if (humanChoice === computerChoice){
+        return console.log("It's a draw, how boring. (¬_¬)");
+
+    } else if (humanChoice === "rock" && computerChoice === "paper"){
+        return computerScore++, console.log("You lose! Paper beats Rock (˵ •̀ᴗ•́˵)و");
+    } else if (humanChoice === "paper" && computerChoice === "scissor"){
+        return computerScore++, console.log("You lose! Scissor beats Paper (˵ •̀ᴗ•́˵)و");
+    } else if (humanChoice === "scissor" && computerChoice === "rock"){
+        return computerScore++, console.log("You lose! Rock beats Scissor (˵ •̀ᴗ•́˵)و");
+    
+    } else if (humanChoice === "rock" && computerChoice === "scissor"){
+        return humanScore++, console.log("You win...Rock beat Scissor (˃̣̣̥ᯅ˂̣̣̥)");
+    } else if (humanChoice === "paper" && computerChoice === "rock"){
+        return humanScore++, console.log("You win...Paper beat Rock (˃̣̣̥ᯅ˂̣̣̥)");
+    } else (humanChoice === "scissor" && computerChoice === "paper")
+            return humanScore++, console.log("You win...Scissor beat Rock (˃̣̣̥ᯅ˂̣̣̥)");
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+humanSelection.toLowerCase();
+    if (humanSelection === "rock"){
+    humanSelection = "rock";
+    } else if (humanSelection === "paper"){
+        humanSelection= "paper";
+    } else if (humanSelection === "scissor"){
+        humanSelection = "scissor";
+    } else console.log("Spelling error! Please try spelling without 's' at the end of the word. I'm only a dumb computer ˙◠˙")
 /*
- 
-
-
-Player's Score
-    Create variables named "humanScore" and "computerScore" in global spore
-    initialize those variables with the value of 0
 
 playRound
     new function "playRound"
