@@ -12,7 +12,7 @@ function getHumanChoice(){
     let playerInput = prompt("Let's play a 5 rounds game! Choose rock, paper or scissor!");
     let choice = playerInput.toLowerCase();
     
-    if (choice !== "rock" && choice !== "paper" && choice !== "scissors"){
+    if (choice !== "rock" && choice !== "paper" && choice !== "scissor"){
         return console.log("Spelling Error! Please try spelling without 's' at the end of the word. ˙◠˙");
     }else
     return choice = playerInput.toLowerCase();
@@ -25,7 +25,7 @@ function playGame(){
    
     function playRound(humanChoice, computerChoice){
         if (humanChoice === computerChoice){
-            return "It's a draw";
+            return "Draw";
         } else if (
             (humanChoice === "rock" && computerChoice === "paper") ||
             (humanChoice === "paper" && computerChoice === "scissor") ||
@@ -38,7 +38,7 @@ function playGame(){
             (humanChoice === "scissor" && computerChoice === "paper")
         ){
             return "You win!"
-        }else playGame();
+        }else return getHumanChoice();
     }
 
     for (let i = 0; i < 5; i++){
@@ -55,8 +55,9 @@ function playGame(){
             humanScore++, console.log("You win... " + humanSelection + " beats " + computerSelection + " (˃̣̣̥ᯅ˂̣̣̥)");
         }else if (roundResult === "You lose!"){
             computerScore++, console.log("You lose! " + computerSelection + " beats " + humanSelection + " (˵ •̀ᴗ•́˵)و")
-        }else (roundResult === "It's a draw")
+        }else if (roundResult === "Draw"){
             console.log("It's a draw ಠ_ಠ")
+        }else return
     }
 
     console.log("Game over!")
@@ -65,7 +66,7 @@ function playGame(){
         }else if (computerScore > humanScore){
             return console.log(humanScore + " || " + computerScore + " YYYYYEEEEEEEESSSSSSS I WINNNNN <(^-^<) <( ^-^ )> (>^-^)>")
         }else{
-            console.log(humanScore + " || " + computerScore + "It's a tie ... how boring (¬_¬)")
+            console.log(humanScore + " || " + computerScore + " It's a tie ... how boring (¬_¬)")
         }
 }
 playGame();
