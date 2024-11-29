@@ -30,14 +30,12 @@ buttons.forEach((button) => {
                 (humanChoice === "scissor" && computerChoice === "rock")
             ){    
                 return "You lose!";
-            } else if(
+            } else(
                 (humanChoice === "rock" && computerChoice === "scissor")||
                 (humanChoice === "paper" && computerChoice === "rock") ||
                 (humanChoice === "scissor" && computerChoice === "paper")
-            ){
+            )
                 return "You win!";
-            }else(humanChoice === undefined)
-                return playGame()
         }
 
         const selection = document.querySelector('#selection');
@@ -47,15 +45,15 @@ buttons.forEach((button) => {
 
         const roundResult = playRound(humanSelection, computerSelection);
         if(roundResult === "You win!"){
-            humanScore++, roundNumber++,
+            ++humanScore, ++roundNumber,
             result.textContent = `You win... ${humanSelection} beats ${computerSelection} (˃̣̣̥ᯅ˂̣̣̥)`,
             finalResult();
         }else if (roundResult === "You lose!"){
-            computerScore++, roundNumber++,
+            ++computerScore, ++roundNumber,
             result.textContent = `You lose! ${computerSelection} beats ${humanSelection} (˵ •̀ᴗ•́˵)و`,
             finalResult();
         }else if (roundResult === "Draw"){
-            roundNumber++,
+            ++roundNumber,
             result.textContent = "It's a draw ಠ_ಠ",
             finalResult();
         }else return
